@@ -1,0 +1,25 @@
+# Stage 1 — build
+FROM node:22-alpine AS build
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY tsconfig.json ./
+COPY src/ ./src/
+RUN npm run build
+
+# Stage 2 — run (no sources, no dev dependencies)
+FROM node:22-alpine AS run
+
+WORKDIR /app
+
+# Only copy the compiled output — no node_modules needed (zero runtime deps)
+COPY --from=build /app/dist ./dist
+
+USER node
+
+EXPOSE 8080
+
+CMD ["node", "dist/index.js"]
