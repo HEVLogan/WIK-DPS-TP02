@@ -1,0 +1,17 @@
+# Stage 1 — compile the assembly inside Alpine (has the ARM64 toolchain)
+FROM alpine:3 AS build
+
+RUN apk add --no-cache binutils
+
+COPY count.s .
+
+RUN as -o count.o count.s && \
+    ld -o count count.o -nostdlib --omagic -e _start && \
+    strip --strip-all count
+
+# Stage 2 — scratch: zero OS, just the binary
+FROM scratch
+
+COPY --from=build /count /count
+
+ENTRYPOINT ["/count"]
