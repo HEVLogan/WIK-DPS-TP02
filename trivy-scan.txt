@@ -1,0 +1,23 @@
+Node.js (node-pkg)
+==================
+Total: 4 (UNKNOWN: 0, LOW: 0, MEDIUM: 3, HIGH: 1, CRITICAL: 0)
+
+┌────────────────────────────────┬────────────────┬──────────┬────────┬───────────────────┬─────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│            Library             │ Vulnerability  │ Severity │ Status │ Installed Version │        Fixed Version        │                            Title                             │
+├────────────────────────────────┼────────────────┼──────────┼────────┼───────────────────┼─────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ brace-expansion (package.json) │ CVE-2026-33750 │ MEDIUM   │ fixed  │ 2.0.2             │ 5.0.5, 3.0.2, 2.0.3, 1.1.13 │ brace-expansion: brace-expansion: Denial of Service via zero │
+│                                │                │          │        │                   │                             │ step value in brace pattern...                               │
+│                                │                │          │        │                   │                             │ https://avd.aquasec.com/nvd/cve-2026-33750                   │
+├────────────────────────────────┼────────────────┤          │        ├───────────────────┼─────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ ip-address (package.json)      │ CVE-2026-42338 │          │        │ 10.1.0            │ 10.1.1                      │ ip-address is a library for parsing and manipulating IPv4    │
+│                                │                │          │        │                   │                             │ and IPv6 add...                                              │
+│                                │                │          │        │                   │                             │ https://avd.aquasec.com/nvd/cve-2026-42338                   │
+├────────────────────────────────┼────────────────┼──────────┤        ├───────────────────┼─────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ picomatch (package.json)       │ CVE-2026-33671 │ HIGH     │        │ 4.0.3             │ 4.0.4, 3.0.2, 2.3.2         │ picomatch: Picomatch: Regular Expression Denial of Service   │
+│                                │                │          │        │                   │                             │ via crafted extglob patterns                                 │
+│                                │                │          │        │                   │                             │ https://avd.aquasec.com/nvd/cve-2026-33671                   │
+│                                ├────────────────┼──────────┤        │                   │                             ├──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2026-33672 │ MEDIUM   │        │                   │                             │ picomatch: Picomatch: Data integrity compromised via method  │
+│                                │                │          │        │                   │                             │ injection with crafted POSIX bracket...                      │
+│                                │                │          │        │                   │                             │ https://avd.aquasec.com/nvd/cve-2026-33672                   │
+└────────────────────────────────┴────────────────┴──────────┴────────┴───────────────────┴─────────────────────────────┴──────────────────────────────────────────────────────────────┘
